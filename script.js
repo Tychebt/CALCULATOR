@@ -16,23 +16,20 @@ function divide (a, b){
     return a / b
 }
 
-
-
 function operate (a, b, operator) {
     switch (operator) {
     case '+':
-        add(a,b);
-        break;
+        return add (3,2);
     case '-':
-        substract(a,b);
-        break;
+        return substract (a,b);
     case '*':
-        multiply(a,b);
-        break;
+        return multiply(a,b);
     case '/':
-        divide(a,b);
-        break;
+        return divide(a,b);                                                                 
     default:
-        console.log(`Sorry, we are out of ${operator}.`);
+        console.log(`Sorry, It didn't work with ${operator}.`);
 }
 }
+
+
+
