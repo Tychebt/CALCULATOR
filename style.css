@@ -1,14 +1,19 @@
 .calculator{
     display: flex;
     justify-content: center;
-
 }
 
 .display{
-    grid-column-start: 1;
-    grid-column-end: 5;
+    grid-column: 1/span 4;
     background-color: rgb(8, 8, 8); 
     color: white;
+}
+
+.display p{
+    font-size: 40px;
+    text-align: right;
+    padding-right: 15px;
+    padding-top: 5px;
 }
 
 .keys{
