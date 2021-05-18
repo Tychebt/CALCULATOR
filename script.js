@@ -1,10 +1,24 @@
 // Functions principales
+let resulta = [];
+let resultb = [];
+let afficheResultata = 0
 
 let outputCurrent = document.querySelector(".current-operand");
-outputCurrent.textContent = "55254545";
-let outputPrevious = document.querySelector(".previous-operand");
-outputPrevious.textContent = "48522";
 
+let outputPrevious = document.querySelector(".previous-operand");
+
+
+
+
+let AC = document.querySelector('#AC')
+    AC.addEventListener('click', function(event) {
+        outputPrevious=outputPrevious.textContent = "";
+        outputCurrent=outputCurrent.textContent = "";
+        resulta = [];
+        resultb = [];
+        afficheResultata=0
+    console.log(AC)
+  });
 
 
 function add (a, b){
@@ -38,7 +52,33 @@ function operate (a, b, operator) {
 }
 }
 
-let AC = document.querySelector('#AC')
+
+$('button[class^="val-"]').on('click',function(me){
+    
+    var id = Number($(this).attr('class').split('-')[1]);
+    console.log('num calc >> ',id);
+    resulta.push(id);
+    
+    console.log('tabs vala >> ',resulta);
+    afficheResultata = resulta.join("")
+    console.log(afficheResultata)
+    outputCurrent.textContent = afficheResultata;
+
+});
+
+
+let selectorBtn = document.querySelectorAll('.keys button');
+
+/*
+switch(selectorBtn.attr('id')){
+    case 'add':
+        add(a,b);
+        break;
+    case 'clear'
+}
+*/
+
+/*
 AC.addEventListener('click', function(event) {
            console.log(AC)
          });
@@ -116,7 +156,7 @@ neuf.addEventListener('click', function(event) {
     console.log(neuf)
   });
 
-
+*/
 
 
 // let buttons = document.querySelector('.keys')
