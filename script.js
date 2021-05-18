@@ -1,5 +1,12 @@
 // Functions principales
 
+let outputCurrent = document.querySelector(".current-operand");
+outputCurrent.textContent = "55254545";
+let outputPrevious = document.querySelector(".previous-operand");
+outputPrevious.textContent = "48522";
+
+
+
 function add (a, b){
     return a + b
 }
@@ -31,13 +38,13 @@ function operate (a, b, operator) {
 }
 }
 
-let clear = document.querySelector('#AC')
-clear.addEventListener('click', function(event) {
-           console.log(clear)
+let AC = document.querySelector('#AC')
+AC.addEventListener('click', function(event) {
+           console.log(AC)
          });
-let plusoumoins = document.querySelector('#btn1')
-plusoumoins.addEventListener('click', function(event) {
-    console.log(plusoumoins)
+let clear = document.querySelector('#clear')
+clear.addEventListener('click', function(event) {
+    console.log(clear)
   });
 let modulo = document.querySelector('#modulo')
 modulo.addEventListener('click', function(event) {
@@ -69,6 +76,7 @@ equal.addEventListener('click', function(event) {
   });
 let un = document.querySelector('#one')
 un.addEventListener('click', function(event) {
+    display.textContent = "1";
     console.log(un)
   });
   let zero = document.querySelector('#zero')
@@ -107,6 +115,9 @@ let neuf = document.querySelector('#nine')
 neuf.addEventListener('click', function(event) {
     console.log(neuf)
   });
+
+
+
 
 // let buttons = document.querySelector('.keys')
 // console.log(...buttons)

@@ -3,23 +3,17 @@
     justify-content: center;
 }
 
-.display{
+.output{
     grid-column: 1/span 4;
     background-color: rgb(8, 8, 8); 
     color: white;
-}
-
-.display input{
-    font-size: 40px;
     text-align: right;
     padding-right: 5px;
-    border: none;
+    padding-top: 5px;
 }
 
-#innerDisplay{
-    width: 95%;
-    background-color: black;
-    color:white;
+.current-operand{
+    font-size: 25px;
 }
 
 .keys{
