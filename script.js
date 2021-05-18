@@ -19,7 +19,7 @@ function divide (a, b){
 function operate (a, b, operator) {
     switch (operator) {
     case '+':
-        return add (3,2);
+        return add (a,b);
     case '-':
         return substract (a,b);
     case '*':
