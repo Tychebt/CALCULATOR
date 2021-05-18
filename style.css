@@ -34,11 +34,11 @@
     opacity: 0.8;
 }
 
-.keys .operator{
+.keys #operator{
     background-color: #ff9e09;
 }
 
-.keys .top-operator{
+.keys #top-operator{
     background-color: #a5a5a6;
     color: black;
 }

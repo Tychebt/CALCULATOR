@@ -10,7 +10,7 @@ let outputPrevious = document.querySelector(".previous-operand");
 
 
 
-let AC = document.querySelector('#AC')
+let AC = document.querySelector('.AC')
     AC.addEventListener('click', function(event) {
         outputPrevious=outputPrevious.textContent = "";
         outputCurrent=outputCurrent.textContent = "";
@@ -53,9 +53,9 @@ function operate (a, b, operator) {
 }
 
 
-$('button[class^="val-"]').on('click',function(me){
+$('button[class^="val_"]').on('click',function(me){
     
-    var id = $(this).attr('class').split('-')[1];
+    var id = $(this).attr('class').split('_')[1];
     console.log('num calc >> ',id);
     resulta.push(id);
     
