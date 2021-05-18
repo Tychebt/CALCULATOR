@@ -1,7 +1,7 @@
 // Functions principales
 let resulta = [];
 let resultb = [];
-let afficheResultata = 0
+
 
 let outputCurrent = document.querySelector(".current-operand");
 
@@ -16,7 +16,7 @@ let AC = document.querySelector('#AC')
         outputCurrent=outputCurrent.textContent = "";
         resulta = [];
         resultb = [];
-        afficheResultata=0
+        afficheResultata=0;
     console.log(AC)
   });
 
