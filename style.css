@@ -1,0 +1,24 @@
+.calculator{
+    display: flex;
+    justify-content: center;
+
+}
+
+.display{
+    grid-column-start: 1;
+    grid-column-end: 5;
+    background-color: rgb(240, 4, 4); 
+    color: white;
+}
+
+.keys{
+    
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-gap: 10px;
+}
+
+.keys button{
+    border-radius: 50px;
+}
