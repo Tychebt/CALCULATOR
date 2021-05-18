@@ -43,6 +43,6 @@
     color: black;
 }
 
-.zero{
+#zero{
     grid-column: 1/span 2;
 }

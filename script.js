@@ -55,7 +55,7 @@ function operate (a, b, operator) {
 
 $('button[class^="val-"]').on('click',function(me){
     
-    var id = Number($(this).attr('class').split('-')[1]);
+    var id = $(this).attr('class').split('-')[1];
     console.log('num calc >> ',id);
     resulta.push(id);
     
