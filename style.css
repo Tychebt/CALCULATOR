@@ -7,18 +7,36 @@
 .display{
     grid-column-start: 1;
     grid-column-end: 5;
-    background-color: rgb(240, 4, 4); 
+    background-color: rgb(8, 8, 8); 
     color: white;
 }
 
 .keys{
-    
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 20% 20% 20% 20% 20%;
-    grid-gap: 10px;
+    grid-template-columns: 50px 50px 50px 50px;
+    grid-template-rows: 50px 50px 50px 50px 50px 50px;
+    grid-gap: 7px;
 }
 
 .keys button{
     border-radius: 50px;
+    background-color: #323333;
+    color: white;
+    border: 0px solid white;
+}
+.keys button:hover{
+    opacity: 0.8;
+}
+
+.keys .operator{
+    background-color: #ff9e09;
+}
+
+.keys .top-operator{
+    background-color: #a5a5a6;
+    color: black;
+}
+
+.zero{
+    grid-column: 1/span 2;
 }
