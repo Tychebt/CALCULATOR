@@ -1,9 +1,9 @@
 let result = [];
-
+let outputPrevious = document.querySelector(".current-previous");
 let outputCurrent = document.querySelector(".current-operand");
 
 
-$('button[class^="val_"]').on('click',function(me){
+$('button').on('click',function(me){
     
     var id = $(this).attr('class').split('_')[1];
     if(id == 'C'){
@@ -17,10 +17,23 @@ $('button[class^="val_"]').on('click',function(me){
       result = [];
       afficheResult=result.join("");
       outputCurrent.textContent = afficheResult;
+      outputPrevious.textContent = afficheResult;
       console.log(id)
     }
+    else if(id == "-" | id=="/" | id=="*" | id=="+"){
+      if( result[result.length-1] == "-" | result[result.length-1] == "+" | result[result.length-1] == "*"| result[result.length-1] == "/"){
+        return
+      }
+      console.log('num calc >> ',id);
+      result.push(id);
+      console.log('tabs vala >> ',result);
+      afficheResult = result.join("")
+      console.log(afficheResult)
+      outputCurrent.textContent = afficheResult;
+    }
     else if(id == "equal"){
-      let resultat = 
+      evalresult = eval(afficheResult)
+      outputPrevious.textContent = evalresult;
 
       result = [];
       afficheResult=result.join("");
