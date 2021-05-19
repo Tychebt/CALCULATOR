@@ -3,10 +3,6 @@ let result = [];
 let outputCurrent = document.querySelector(".current-operand");
 
 
-
-
-
-
 $('button[class^="val_"]').on('click',function(me){
     
     var id = $(this).attr('class').split('_')[1];
@@ -18,6 +14,14 @@ $('button[class^="val_"]').on('click',function(me){
       outputCurrent.textContent = afficheResult;
     }
     else if(id == "AC"){
+      result = [];
+      afficheResult=result.join("");
+      outputCurrent.textContent = afficheResult;
+      console.log(id)
+    }
+    else if(id == "equal"){
+      let resultat = 
+
       result = [];
       afficheResult=result.join("");
       outputCurrent.textContent = afficheResult;
