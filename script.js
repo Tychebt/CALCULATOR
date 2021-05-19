@@ -67,12 +67,12 @@ $('button[class^="val_"]').on('click',function(me){
       console.log(afficheResultata)
       outputCurrent.textContent = afficheResultata;
     }
-
-
 });
 
 
-let selectorBtn = document.querySelectorAll('.keys button');
+
+
+//let selectorBtn = document.querySelectorAll('.keys button');
 
 /*
 switch(selectorBtn.attr('id')){
