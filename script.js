@@ -1,5 +1,4 @@
-// Functions principales
-let resulta = [];
+let result = [];
 
 let outputCurrent = document.querySelector(".current-operand");
 
@@ -7,71 +6,68 @@ let outputCurrent = document.querySelector(".current-operand");
 
 let AC = document.querySelector('.AC')
     AC.addEventListener('click', function(event) {
-        outputPrevious=outputPrevious.textContent = "";
+        result = [];
+        afficheResult=0;
         outputCurrent=outputCurrent.textContent = "";
-        resulta = [];
-        resultb = [];
-        afficheResultata=0;
     console.log(AC)
   });
-
-
-function add (a, b){
-    return a + b
-}
-
-function substract (a, b){
-    return a - b
-}
-
-function multiply (a, b){
-    return a * b
-}
-
-function divide (a, b){
-    return a / b
-}
-
-function operate (a, b, operator) {
-    switch (operator) {
-    case '+':
-        return add (a,b);
-    case '-':
-        return substract (a,b);
-    case '*':
-        return multiply(a,b);
-    case '/':
-        return divide(a,b);                                                                 
-    default:
-        console.log(`Sorry, It didn't work with ${operator}.`);
-}
-}
 
 
 $('button[class^="val_"]').on('click',function(me){
     
     var id = $(this).attr('class').split('_')[1];
     if(id == 'C'){
-      resulta.pop()
+      result.pop()
       console.log(id)
-      afficheResultata = resulta.join("")
-      console.log(afficheResultata)
-      outputCurrent.textContent = afficheResultata;
+      afficheResult = result.join("")
+      console.log(afficheResult)
+      outputCurrent.textContent = afficheResult;
     }
     else{
       console.log('num calc >> ',id);
-      resulta.push(id);
-      
-      console.log('tabs vala >> ',resulta);
-      afficheResultata = resulta.join("")
-      console.log(afficheResultata)
-      outputCurrent.textContent = afficheResultata;
+      result.push(id);
+      console.log('tabs vala >> ',result);
+      afficheResult = result.join("")
+      console.log(afficheResult)
+      outputCurrent.textContent = afficheResult;
     }
 });
 
 
 
 
+/*
+function add (a, b){
+  return a + b
+}
+
+function substract (a, b){
+  return a - b
+}
+
+function multiply (a, b){
+  return a * b
+}
+
+function divide (a, b){
+  return a / b
+}
+
+function operate (a, b, operator) {
+  switch (operator) {
+  case '+':
+      return add (a,b);
+  case '-':
+      return substract (a,b);
+  case '*':
+      return multiply(a,b);
+  case '/':
+      return divide(a,b);                                                                 
+  default:
+      console.log(`Sorry, It didn't work with ${operator}.`);
+}
+}
+*/
 //let selectorBtn = document.querySelectorAll('.keys button');
 
 /*
