@@ -4,13 +4,7 @@ let outputCurrent = document.querySelector(".current-operand");
 
 
 
-let AC = document.querySelector('.AC')
-    AC.addEventListener('click', function(event) {
-        result = [];
-        afficheResult=0;
-        outputCurrent=outputCurrent.textContent = "";
-    console.log(AC)
-  });
+
 
 
 $('button[class^="val_"]').on('click',function(me){
@@ -22,6 +16,12 @@ $('button[class^="val_"]').on('click',function(me){
       afficheResult = result.join("")
       console.log(afficheResult)
       outputCurrent.textContent = afficheResult;
+    }
+    else if(id == "AC"){
+      result = [];
+      afficheResult=result.join("");
+      outputCurrent.textContent = afficheResult;
+      console.log(id)
     }
     else{
       console.log('num calc >> ',id);
@@ -35,6 +35,15 @@ $('button[class^="val_"]').on('click',function(me){
 
 
 
+
+
+// let AC = document.querySelector('.AC')
+//     AC.addEventListener('click', function(me) {
+//         result = [];
+//         afficheResult=0;
+//         outputCurrent=outputCurrent.textContent = "";
+//     console.log(AC)
+//   });
 
 /*
 function add (a, b){
