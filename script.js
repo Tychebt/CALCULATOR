@@ -1,12 +1,7 @@
 // Functions principales
 let resulta = [];
-let resultb = [];
-
 
 let outputCurrent = document.querySelector(".current-operand");
-
-let outputPrevious = document.querySelector(".previous-operand");
-
 
 
 
@@ -56,13 +51,23 @@ function operate (a, b, operator) {
 $('button[class^="val_"]').on('click',function(me){
     
     var id = $(this).attr('class').split('_')[1];
-    console.log('num calc >> ',id);
-    resulta.push(id);
-    
-    console.log('tabs vala >> ',resulta);
-    afficheResultata = resulta.join("")
-    console.log(afficheResultata)
-    outputCurrent.textContent = afficheResultata;
+    if(id == 'C'){
+      resulta.pop()
+      console.log(id)
+      afficheResultata = resulta.join("")
+      console.log(afficheResultata)
+      outputCurrent.textContent = afficheResultata;
+    }
+    else{
+      console.log('num calc >> ',id);
+      resulta.push(id);
+      
+      console.log('tabs vala >> ',resulta);
+      afficheResultata = resulta.join("")
+      console.log(afficheResultata)
+      outputCurrent.textContent = afficheResultata;
+    }
+
 
 });
 
