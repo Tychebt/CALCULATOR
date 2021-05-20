@@ -1,3 +1,51 @@
+class Calculator{
+  constructor(currentOperand, previousOperand){
+  this._currentOperand = currentOperand;
+  this._previousOperand = previousOperand;
+  }
+  get currentOperand(){
+    return this._currentOperand;
+  }
+  get previousOperand(){
+    return this._previousOperand;
+  }
+
+
+  add (a, b){
+    return a + b
+  }
+  
+  substract (a, b){
+    return a - b
+  }
+  
+  multiply (a, b){
+    return a * b
+  }
+  
+  divide (a, b){
+    return a / b
+  }
+  
+  operate (a, b, operator) {
+    switch (operator) {
+    case '+':
+        return add (a,b);
+    case '-':
+        return substract (a,b);
+    case '*':
+        return multiply(a,b);
+    case '/':
+        return divide(a,b);                                                                 
+    default:
+        console.log(`Sorry, It didn't work with ${operator}.`);
+  }
+  }
+
+}
+
+/*
+
 let result = [];
 let outputPrevious = document.querySelector(".current-previous");
 let outputCurrent = document.querySelector(".current-operand");
