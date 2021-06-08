@@ -1,3 +1,12 @@
+const numberButtons = document.querySelectorAll('[data-number]')
+const operationButtons = document.querySelectorAll('[data-operation]')
+const equalButton = document.querySelector('[data-equal]')
+const deleteButton = document.querySelector('[data-delete]')
+const allClearButton = document.querySelector('[data-all-clear]')
+const previousOperandTextElement = document.querySelector("[data-previous-operand]");
+const currentOperandTextElement = document.querySelector("[data-current-operand]");
+
+
 class Calculator{
   constructor(currentOperandTextElement, previousOperandTextElement){
   this.currentOperandTextElement = currentOperandTextElement;
@@ -56,47 +65,67 @@ class Calculator{
     this.previousOperand = ""
   }
 
+  getDisplayNumber(number){
+    const floatNumber = parseFloat(number)
+    if(isNaN(floatNumber)) return ''
+    return floatNumber.toLocaleString("en")
+  }
+
   updateDisplay(){
       this.currentOperandTextElement.innerText = this.currentOperand
-      this.previousOperandTextElement.innerText = this.previousOperand
+      if(this.operation!= null){
+        this.previousOperandTextElement.innerText = 
+         `${this.previousOperand} ${this.operation}`
+      }
   }
 }
 
-const numberButtons = document.querySelectorAll('[data-number]')
-const operationButtons = document.querySelectorAll('[data-operation]')
-const equalButton = document.querySelector('[data-equal]')
-const deleteButton = document.querySelector('[data-delete]')
-const allClearButton = document.querySelector('[data-all-clear]')
-const previousOperandTextElement = document.querySelector("[data-previous-operand]");
-const currentOperandTextElement = document.querySelector("[data-current-operand]");
 
 const calculator = new Calculator(currentOperandTextElement, previousOperandTextElement)
 
 numberButtons.forEach(button => {
-  button.addEvenListener('click',() =>{
-    calculator.appendnumber(button.innerText)
-    calculator.updateDisplay()
+  button.addEventListener('click', () => {
+    calculator.appendNumber(button.innerText)
+    calculator.updateScreen()
   })
 })
 
 operationButtons.forEach(button => {
-  button.addEvenListener('click',() =>{
+  button.addEventListener('click', () => {
     calculator.choseOperation(button.innerText)
-    calculator.updateDisplay()
+    calculator.updateScreen()
   })
 })
 
-equalButton.addEvenListener('click', button =>{
-  calculator.compute()
-  calculator.updateDisplay()
+singleOperationButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    calculator.singleOperation(button.innerText)
+    calculator.updateScreen()
+  })
 })
 
-allClearButton.addEvenListener('click', button =>{
+equalButton.addEventListener('click', button => {
+  calculator.computeElements()
+  calculator.updateScreen()
+  calculator.resetCalc = true
+})
+
+allClearButton.addEventListener('click', button => {
   calculator.clear()
-  calculator.updateDisplay()
+  calculator.updateScreen()
 })
 
-deleteButton.addEvenListener('click', button =>{
+deleteButton.addEventListener('click', button => {
   calculator.delete()
-  calculator.updateDisplay()
+  calculator.updateScreen()
+})
+
+changeButton.addEventListener('click', button => {
+  calculator.changeSign()
+  calculator.updateScreen()
+})
+
+percentButton.addEventListener('click', button => {
+  calculator.calculatePercentage()
+  calculator.updateScreen()
 })
