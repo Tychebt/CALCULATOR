@@ -70,12 +70,23 @@ class Calculator{
 
 }
 
-const previousOperand = document.querySelector(".previous-operand");
-const currentOperand = document.querySelector(".current-operand");
+const numberButtons = document.querySelectorAll('[data-number]')
+const operationButtons = document.querySelectorAll('[data-operation]')
+const equalButtons = document.querySelectorAll('[data-equal]')
+const deleteButtons = document.querySelectorAll('[data-delete]')
+const allClearButtons = document.querySelectorAll('[data-all-clear]')
 
-const Calculator = new Calculator(previousOperand, currentOperand)
+const previousOperand = document.querySelector("[data-previous-operand]");
+const currentOperand = document.querySelector("[data-current-operand]");
 
-const numberButtons.forEach(button =>{button.addEvenListener})
+const calculator = new Calculator(previousOperand, currentOperand)
+
+numberButtons.forEach(button =>{
+  button.addEvenListener('click',() =>{
+    calculator.appendnumber(button.innerText)
+    calculator.updateDisplay()
+  })
+})
 
 /*
 
