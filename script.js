@@ -10,6 +10,29 @@ class Calculator{
     return this._previousOperand;
   }
 
+  clear(){
+
+  }
+
+  delete(){
+
+  }
+
+  appendnumber(number){
+
+  }
+
+  choseOperation(operation){
+
+  }
+
+  compute(){
+
+  }
+
+  updateDisplay(){
+
+  }
 
   add (a, b){
     return a + b
