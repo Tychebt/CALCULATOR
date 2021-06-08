@@ -27,7 +27,7 @@ body{
     padding-top: 5px;
 }
 
-.current-operand{
+.previous-operand{
     font-size: 30px;
 }
 
