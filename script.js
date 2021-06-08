@@ -13,7 +13,7 @@ class Calculator{
   }
 
   delete(){
-
+    this.currentOperand = this.currentOperand.toString().slice(0,-1)
   }
 
   appendnumber(number){
@@ -63,32 +63,37 @@ class Calculator{
   }
 }
 
-const numberButtons = document.querySelectorAll('[data-number]')
-const operationButtons = document.querySelectorAll('[data-operation]')
-const equalButtons = document.querySelectorAll('[data-equal]')
-const deleteButtons = document.querySelectorAll('[data-delete]')
-const allClearButtons = document.querySelectorAll('[data-all-clear]')
+const numberButton = document.querySelectorAll('[data-number]')
+const operationButton = document.querySelectorAll('[data-operation]')
+const equalButton = document.querySelectorAll('[data-equal]')
+const deleteButton = document.querySelectorAll('[data-delete]')
+const allClearButton = document.querySelectorAll('[data-all-clear]')
 
 const previousOperandTextElement = document.querySelector("[data-previous-operand]");
 const currentOperandTextElement = document.querySelector("[data-current-operand]");
 
 const calculator = new Calculator(currentOperandTextElement, previousOperandTextElement)
 
-numberButtons.forEach(button =>{
+numberButton.forEach(button =>{
   button.addEvenListener('click',() =>{
     calculator.appendnumber(button.innerText)
     calculator.updateDisplay()
   })
 })
 
-operationButtons.forEach(button =>{
+operationButton.forEach(button =>{
   button.addEvenListener('click',() =>{
     calculator.choseOperation(button.innerText)
     calculator.updateDisplay()
   })
 })
 
-equalButtons.addEvenListener('click', button =>{
+equalButton.addEvenListener('click', button =>{
   calculator.compute()
+  calculator.updateDisplay()
+})
+
+allClearButton.addEvenListener('click', button =>{
+  calculator.clear()
   calculator.updateDisplay()
 })
