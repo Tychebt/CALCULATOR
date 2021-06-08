@@ -2,6 +2,7 @@ class Calculator{
   constructor(currentOperand, previousOperand){
   this._currentOperand = currentOperand;
   this._previousOperand = previousOperand;
+  this.clear()
   }
   get currentOperand(){
     return this._currentOperand;
@@ -11,7 +12,9 @@ class Calculator{
   }
 
   clear(){
-
+    this.currentOperand = ""
+    this.previousOperand = ""
+    this.operation = undefined
   }
 
   delete(){
@@ -69,6 +72,10 @@ class Calculator{
 
 const previousOperand = document.querySelector(".previous-operand");
 const currentOperand = document.querySelector(".current-operand");
+
+const Calculator = new Calculator(previousOperand, currentOperand)
+
+const numberButtons.forEach(button =>{button.addEvenListener})
 
 /*
 
