@@ -44,6 +44,9 @@ class Calculator{
 
 }
 
+const previousOperand = document.querySelector(".previous-operand");
+const currentOperand = document.querySelector(".current-operand");
+
 /*
 
 let result = [];
