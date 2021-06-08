@@ -22,7 +22,8 @@ class Calculator{
   }
 
   appendnumber(number){
-
+    if(number == '.' && this.currentOperand.includes('.'))return
+    this.currentOperand = this.currentOperand.toString() + number.toString()
   }
 
   choseOperation(operation){
@@ -88,6 +89,12 @@ numberButtons.forEach(button =>{
   })
 })
 
+operationButtons.forEach(button =>{
+  button.addEvenListener('click',() =>{
+    calculator.choseOperation(button.innerText)
+    calculator.updateDisplay()
+  })
+})
 /*
 
 let result = [];
